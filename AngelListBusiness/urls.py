@@ -8,6 +8,7 @@ admin.autodiscover()
 from search import views
 
 urlpatterns = patterns('',
+	url(r'$', 'search.views.index'),
     url(r'^index/', 'search.views.index', name='index'),
     url(r'^search/(?P<keyword>[^\.]+)/(?P<location>[^\.]+)$', 'search.views.search', name='search'),
     url(r'^admin/', include(admin.site.urls)),
