@@ -25,7 +25,7 @@ def search(request, keyword, location):
 				job_match = False
 		# if category matches business and location matches search, check for desc and add it to list.
 		if job_match and (keyword in job['description']):
-			final_jobs.append(job['title'])
+			final_jobs.append(job)
 	context = {'jobs': final_jobs}
 	return render(request, 'search/search.html', context)
 
